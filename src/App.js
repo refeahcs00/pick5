@@ -1,5 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import './Scorebar.css';
+import './Game.css';
 import React from 'react';
 
 const players = [
@@ -8,6 +10,39 @@ const players = [
   {name: 'Nick Zuchelli', dob: '10-22-1997', sex: 'male', score: 62},
   {name: 'MaryKate Robinson', dob: '01-24-1996', sex: 'female', score: 32},
 ]
+
+const games = [
+  {home: {team: 'Pittsburgh Steelers', score: 24}, away: {team: 'Baltimore Ravens', score: 10}},
+  {home: {team: 'Philadelphia Eagles', score: 0}, away: {team: 'Detriot Lions', score: 342}},
+  {home: {team: 'Buffalo Bills', score: 43}, away: {team: 'New York Jets', score: 21}},
+]
+
+class Game extends React.Component {
+  render() {
+    return (
+      <div className="Game">
+        <label>{this.props.away.team}: {this.props.away.score}</label> 
+        <label>{this.props.home.team}: {this.props.home.score}</label>
+      </div>
+    );
+  }
+}
+
+class Scorebar extends React.Component {
+  render() {
+    const game_list = this.props.games.map((x) => 
+      <a href="#game">
+        <Game home={x.home} away={x.away} />
+      </a>
+    );
+
+    return (
+      <div className="Scorebar">
+        {game_list}
+      </div>
+    );
+  }
+}
 
 class Leaderboard extends React.Component {
   render() {
@@ -27,21 +62,8 @@ class Leaderboard extends React.Component {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Scorebar games={games} />
       <Leaderboard board={players} />
     </div>
   );
