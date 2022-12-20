@@ -3,9 +3,11 @@ div.Scorebar {
     overflow: auto;
     white-space: nowrap;
     align-items: center;
+    border: solid greenyellow 1px;
 }
 
 div.Scorebar a {
+    border: solid blueviolet 1px;
     display: inline-block;
     color: white;
     padding: 14px;

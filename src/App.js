@@ -59,7 +59,7 @@ class Leaderboard extends React.Component {
     );
 
     return (
-      <div>
+      <div className='Leaderboard'>
         <h1>Leaderboard</h1>
         <ol>{jsx_board}</ol>
       </div>
