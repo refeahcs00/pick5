@@ -13,16 +13,23 @@ const players = [
 
 const games = [
   {home: {team: 'Pittsburgh Steelers', score: 24}, away: {team: 'Baltimore Ravens', score: 10}},
-  {home: {team: 'Philadelphia Eagles', score: 0}, away: {team: 'Detriot Lions', score: 342}},
+  {home: {team: 'Philadelphia Eagles', score: 0}, away: {team: 'Detriot Lions', score: 99}},
   {home: {team: 'Buffalo Bills', score: 43}, away: {team: 'New York Jets', score: 21}},
+  {home: {team: 'Buccaneers', score: 52}, away: {team: 'Rams', score: 33}}
 ]
 
 class Game extends React.Component {
   render() {
     return (
       <div className="Game">
-        <label>{this.props.away.team}: {this.props.away.score}</label> 
-        <label>{this.props.home.team}: {this.props.home.score}</label>
+        <div className="TeamScore">
+          <label>{this.props.away.team}</label>
+          <label>{this.props.away.score}</label>
+        </div>
+        <div className="TeamScore">
+          <label>{this.props.home.team}</label>
+          <label>{this.props.home.score}</label>
+        </div>
       </div>
     );
   }

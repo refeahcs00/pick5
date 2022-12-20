@@ -8,7 +8,6 @@ div.Scorebar {
 div.Scorebar a {
     display: inline-block;
     color: white;
-    text-align: center;
     padding: 14px;
     text-decoration: none;
 }
