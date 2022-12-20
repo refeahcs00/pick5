@@ -1,0 +1,18 @@
+div.Scorebar {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    align-items: center;
+}
+
+div.Scorebar a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.Scorebar a:hover {
+    background-color: #777;
+}

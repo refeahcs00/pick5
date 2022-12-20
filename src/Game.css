@@ -1,0 +1,4 @@
+div.Game {
+    display: inline-flex;
+    flex-direction: column;
+}
