@@ -2,6 +2,7 @@
 import './App.css';
 import './Scorebar.css';
 import './Game.css';
+import LineChart from './LineChart';
 import React from 'react';
 
 const players = [
@@ -72,6 +73,7 @@ function App() {
     <div>
       <Scorebar games={games} />
       <Leaderboard board={players} />
+      <LineChart />
     </div>
   );
 }
