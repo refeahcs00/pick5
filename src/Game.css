@@ -1,5 +1,4 @@
 div.Game {
-    border: solid blue 1px;
     display: inline-flex;
     flex-direction: column;
 }

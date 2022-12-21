@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import './Scorebar.css';
 import './Game.css';
@@ -72,8 +71,10 @@ function App() {
   return (
     <div>
       <Scorebar games={games} />
-      <Leaderboard board={players} />
-      <LineChart />
+      <div className='main'>
+        <Leaderboard board={players} />
+        <LineChart />
+      </div>
     </div>
   );
 }
