@@ -1,1 +1,27 @@
-<p>Hello World</p>
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Pick'em </title>
+
+    <link rel="stylesheet" href="{% static 'app/index.css' %}"></link>
+</head>
+
+<body>
+    <div class="liveScoreboard">
+        {% if game_list %}
+            {% for game in game_list %}
+                <a href="#game">
+                    <div class="game">
+                        <label>{{game.away.team}} - {{game.away.score}}</label>
+                        <label>{{game.home.team}} - {{game.home.score}}</label>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <label class="noGames"> No Games Scheduled This Week! </label>
+        {% endif %}
+    </div>
+</body>
+</html>

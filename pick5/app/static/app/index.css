@@ -1,0 +1,29 @@
+div.liveScoreboard {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    align-items: center;
+}
+
+div.liveScoreboard a {
+    display: inline-block;
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.liveScoreboard a:hover {
+    background-color: #777;
+}
+
+.noGames {
+    display: inline-block;
+    justify-content: center;
+    color: white;
+    padding: 14px;
+}
+
+div.game {
+    display: inline-flex;
+    flex-direction: column;
+}
