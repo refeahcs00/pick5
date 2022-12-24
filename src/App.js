@@ -15,7 +15,7 @@ const games = [
   {home: {team: 'Pittsburgh Steelers', score: 24}, away: {team: 'Baltimore Ravens', score: 10}},
   {home: {team: 'Philadelphia Eagles', score: 0}, away: {team: 'Detriot Lions', score: 99}},
   {home: {team: 'Buffalo Bills', score: 43}, away: {team: 'New York Jets', score: 21}},
-  {home: {team: 'Buccaneers', score: 52}, away: {team: 'Rams', score: 33}}
+  {home: {team: 'Tampa Bay Buccaneers', score: 52}, away: {team: 'Los Angeles Rams', score: 33}}
 ]
 
 class Game extends React.Component {
@@ -73,7 +73,7 @@ function App() {
       <Scorebar games={games} />
       <div className='main'>
         <Leaderboard board={players} />
-        <LineChart />
+        <LineChart className='LineChart' />
       </div>
     </div>
   );

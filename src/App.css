@@ -5,10 +5,11 @@
 }
 
 .LineChart {
-  height: 90vh;
+  width: 100vw;
+  padding: 10px;
 }
 
-/*div.main {
+div.main {
   display: flex;
   flex-direction: row;
-}*/
+}
