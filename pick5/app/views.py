@@ -1,3 +1,5 @@
+# Authentication help from https://docs.djangoproject.com/en/4.1/topics/auth/default/#using-the-views
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
