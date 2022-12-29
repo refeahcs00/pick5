@@ -13,6 +13,7 @@ class Team(models.Model):
 class Game(models.Model):
     WEEK_CHOICES = [(x, f'Week {x}') for x in range(1, 19)]
 
+    game_id = models.IntegerField(null=False, blank=True)
     week = models.CharField(max_length=8, null=False, blank=False, choices=WEEK_CHOICES)
     spread = models.DecimalField(null=False, blank=False, max_digits=3, decimal_places=1)
     team = models.ForeignKey(to='Team', null=False, blank=False, on_delete=models.DO_NOTHING)
