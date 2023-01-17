@@ -16,6 +16,11 @@ class Lines(models.Model):
     under = models.DecimalField(null=True, blank=True, max_digits=4, decimal_places=1)
 
 
+class Season(models.Model):
+    start = models.DateField(null=False)
+    end = models.DateField(null=False)
+
+
 class Match(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     away_team = models.ForeignKey(to=Team, related_name='+', on_delete=models.DO_NOTHING)
@@ -23,11 +28,9 @@ class Match(models.Model):
     lines = models.ForeignKey(to=Lines, on_delete=models.DO_NOTHING)
     away_score = models.IntegerField(null=False, blank=False, default=0)
     home_score = models.IntegerField(null=False, blank=False, default=0)
-
-
-class Season(models.Model):
-    start = models.DateField(null=False)
-    end = models.DateField(null=False)
+    season = models.ForeignKey(to=Season, on_delete=models.CASCADE)
+    week = models.IntegerField(null=False, blank=False, choices=[(i, f'Week {i}') for i in range(1, 19)])
+    finished = models.BooleanField(null=False, default=False)
 
 
 class Pick(models.Model):
@@ -35,5 +38,3 @@ class Pick(models.Model):
     team = models.ForeignKey(to=Team, on_delete=models.DO_NOTHING)
     match = models.ForeignKey(to=Match, on_delete=models.DO_NOTHING)
     user = models.ForeignKey(to=User, on_delete=models.DO_NOTHING)
-    season = models.ForeignKey(to=Season, on_delete=models.CASCADE)
-    week = models.IntegerField(null=False, blank=False, choices=[(i, f'Week {i}') for i in range(1, 19)])
